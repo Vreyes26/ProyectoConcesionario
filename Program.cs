@@ -40,6 +40,12 @@ namespace ProyectoConcesionario
                     case 1:
                         Console.Clear();
                         Console.WriteLine("Ingresar datos de vehiculo");
+
+
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Ver datos");
                         break;
                 }
 

@@ -10,6 +10,8 @@ namespace ProyectoConcesionario
             string user;
             string password;
             int menu = 0;
+            double _litros;
+            double _capacidad;
 
             do
             {
@@ -24,6 +26,9 @@ namespace ProyectoConcesionario
                     Console.WriteLine("Usuario o contraseña incorrectos\n");
                 }
             } while (user != "admin" || password != "abc123");
+
+            //COSNTRUCTORES
+            Estanque estanque = new Estanque();
 
             do
             {
@@ -40,8 +45,10 @@ namespace ProyectoConcesionario
                     case 1:
                         Console.Clear();
                         Console.WriteLine("Ingresar datos de vehiculo");
-
-
+                        _litros = double.Parse(Console.ReadLine());
+                        _capacidad = double.Parse(Console.ReadLine());
+                        estanque.MitadCombustible(_litros, _capacidad);
+                        
                         break;
 
                     case 2:

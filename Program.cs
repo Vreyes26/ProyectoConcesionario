@@ -13,24 +13,35 @@ namespace ProyectoConcesionario
 
             do
             {
-                Console.WriteLine("Usuario: ");
+                Console.Write("Usuario: ");
                 user = Console.ReadLine();
-                Console.WriteLine("Contraseña: ");
+                Console.Write("Contraseña: ");
                 password = Console.ReadLine();
 
-                if (user != "admin" && password != "abc123")
+                if (user != "admin" || password != "abc123")
                 {
-                    Console.WriteLine("Error, usuario o contraseña incorrecto");
+                    Console.Clear();
+                    Console.WriteLine("Usuario o contraseña incorrectos\n");
                 }
-            } while (user != "admin" && password != "abc123");
+            } while (user != "admin" || password != "abc123");
 
             do
             {
+                Console.Clear();
+                Console.WriteLine("----------BIENVENIDO----------\n");
                 Console.WriteLine("Ingrese: \n" +
                     "1: Agregar vehiculo \n" +
                     "2: Ver datos vehiculo\n" +
                     "0: Salir");
                 menu = int.Parse(Console.ReadLine());
+
+                switch (menu)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("Ingresar datos de vehiculo");
+                        break;
+                }
 
             } while (menu != 0);
         }

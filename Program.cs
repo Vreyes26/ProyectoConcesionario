@@ -70,10 +70,6 @@ namespace ProyectoConcesionario
                         {
                             Console.WriteLine("Bajo combustible");
                         }
-                        else
-                        {
-                            Console.WriteLine("Ingreso de litros erroneo");
-                        }
                         Console.ReadKey();
                         break;
                 }

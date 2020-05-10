@@ -10,7 +10,7 @@ namespace ProyectoConcesionario
         public double _litros;
         public bool _estadoCombustible;
 
-        public void setCombustible(double _litros, double _capacidad)
+        public void SetCombustible( double _litros, double _capacidad)
         {
             if(_litros > (0.105 * _capacidad) && _litros < (0.5 * _capacidad))
             {
@@ -21,7 +21,7 @@ namespace ProyectoConcesionario
             }
         }
 
-        public bool getCombustible()
+        public bool GetCombustible()
         {
             return _estadoCombustible;
         }

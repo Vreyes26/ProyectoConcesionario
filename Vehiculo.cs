@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ProyectoConcesionario
 {
-    abstract class Vehiculo
+    public abstract class Vehiculo
     {
-
+        
     }
 }

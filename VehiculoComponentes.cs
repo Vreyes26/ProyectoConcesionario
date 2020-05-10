@@ -7,6 +7,12 @@ namespace ProyectoConcesionario
 {
     abstract class VehiculoComponentes
     {
-        private double EstadoComponente = 0.0;
+        private int _estadoComponentes;
+
+        public int EstadoComponentes
+        {
+            get { return _estadoComponentes; }
+            set { _estadoComponentes = value; }
+        }
     }
 }

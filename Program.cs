@@ -52,16 +52,15 @@ namespace ProyectoConcesionario
                         Console.WriteLine("Combustible actual del vehiculo: ");
                         _litros = double.Parse(Console.ReadLine());
 
-                        estanque.setCombustible(_litros, _capacidad);
-                        
-                        Console.WriteLine("Datos combustible: ");
+                        estanque.SetCombustible(_litros, _capacidad);
+
                         Console.WriteLine("-----------Terminar-----------");
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.WriteLine("Ver datos");
 
-                        bool Litros = estanque.getCombustible();
+                        bool Litros = estanque.GetCombustible();
                         if (Litros == true)
                         {
                             Console.WriteLine("Mitad de combustible");
@@ -70,6 +69,7 @@ namespace ProyectoConcesionario
                         {
                             Console.WriteLine("Bajo combustible");
                         }
+
                         Console.ReadKey();
                         break;
                 }

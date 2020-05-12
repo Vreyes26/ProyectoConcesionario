@@ -29,6 +29,8 @@ namespace ProyectoConcesionario
 
             //COSNTRUCTORES
             Estanque estanque = new Estanque();
+            Automovil automovil = new Automovil();
+
 
             do
             {
@@ -44,12 +46,18 @@ namespace ProyectoConcesionario
                 {
                     case 1:
                         Console.Clear();
-                        Console.Write("------Ingresar datos de vehiculo------");
+                        Console.WriteLine("------Ingresar datos de vehiculo------\n");
+                        Console.Write("Marca: ");
+                        automovil.Marca = Console.ReadLine();
+                        Console.Write("Año del vehiculo: ");
+                        automovil.Año = int.Parse(Console.ReadLine());
+                        Console.Write("Kilometraje: ");
+                        automovil.Kilometraje = int.Parse(Console.ReadLine());
 
                         Console.Write("Capacidad de combustible: ");
                         _capacidad = double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Combustible actual del vehiculo: ");
+                        Console.Write("Combustible actual del vehiculo: ");
                         _litros = double.Parse(Console.ReadLine());
 
                         estanque.SetCombustible(_litros, _capacidad);
@@ -58,8 +66,12 @@ namespace ProyectoConcesionario
                         Console.ReadKey();
                         break;
                     case 2:
-                        Console.WriteLine("Ver datos");
+                        Console.Clear();
+                        Console.WriteLine("----------Ver datos----------\n");
 
+                        Console.WriteLine("Marca: " + automovil.Marca);
+                        Console.WriteLine("Año: " + automovil.Año);
+                        Console.WriteLine("Kilometraje: " + automovil.Kilometraje);
                         bool Litros = estanque.GetCombustible();
                         if (Litros == true)
                         {

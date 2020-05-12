@@ -25,5 +25,10 @@ namespace ProyectoConcesionario
         {
             return _estadoCombustible;
         }
+
+        public Estanque(double capacidad)
+        {
+            _capacidad = capacidad;
+        }
     }
 }

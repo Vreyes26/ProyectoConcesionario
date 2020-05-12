@@ -4,14 +4,20 @@ using System.Text;
 
 namespace ProyectoConcesionario
 {
-    public class Automovil : Vehiculo
+    class Automovil : Vehiculo
     {
-        private string _marca;
-        private int _año;
-        private int _kilometraje;
+        public Automovil(int idmotor, TipoMotor tipoMotor, int cilindrada,
+            int numRuedas, TipoRecubrimiento tipoRecubrimiento, int minDurometro,
+            int maxDurometro, TipoMezclador tipoMezclador, double litros, double capacidad): 
+            base(idmotor, tipoMotor, cilindrada, numRuedas, tipoRecubrimiento,
+            minDurometro, maxDurometro, tipoMezclador, capacidad)
+        {
 
-        public string Marca { get => _marca; set => _marca = value; }
-        public int Año { get => _año; set => _año = value; }
-        public int Kilometraje { get => _kilometraje; set => _kilometraje = value; }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

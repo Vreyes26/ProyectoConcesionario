@@ -4,20 +4,32 @@ using System.Text;
 
 namespace ProyectoConcesionario
 {
-    class Motor
+    enum TipoMotor
     {
-        private int ID;
-        private string Tipo;
-        private int Cilindrada;
+        DOS_TIEMPOS, CUATRO_TIEMPOS
+    }
 
-        enum TipoMotor
+    class Motor : VehiculoComponentes
+    {
+        private readonly int _id;
+        private readonly TipoMotor _tipo;
+        private double _cilindrada;
+   
+        public Motor(int id, TipoMotor tipo, double cilindrada)
         {
-            DOS_TIEMPOS, CUATRO_TIEMPOS
+            _id = id;
+            _tipo = tipo;
+            _cilindrada = cilindrada;
         }
-        
-        public void datosMotor(int id, string tipo, int cilindrada)
+
+        public int ID => _id;
+
+        public TipoMotor tipo => _tipo;
+
+        public double Cilindrada
         {
-            
+            get => _cilindrada;
+            set => double.TryParse(value.ToString(), out _cilindrada);
         }
 
     }

@@ -9,9 +9,8 @@ namespace ProyectoConcesionario
         {
             string user;
             string password;
-            int menu = 0;
-            double _litros;
-            double _capacidad;
+            string recub = "";
+            string tipCarb = "";
 
             do
             {
@@ -27,11 +26,6 @@ namespace ProyectoConcesionario
                 }
             } while (user != "admin" || password != "abc123");
 
-            //COSNTRUCTORES
-            Estanque estanque = new Estanque();
-            Automovil automovil = new Automovil();
-
-
             do
             {
                 Console.Clear();
@@ -40,48 +34,130 @@ namespace ProyectoConcesionario
                     "1: Agregar vehiculo \n" +
                     "2: Ver datos vehiculo\n" +
                     "0: Salir");
-                menu = int.Parse(Console.ReadLine());
+                int menu = int.Parse(Console.ReadLine());
 
                 switch (menu)
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("------Ingresar datos de vehiculo------\n");
+                        Console.WriteLine("------Ingresar datos de vehiculo------");
                         Console.Write("Marca: ");
-                        automovil.Marca = Console.ReadLine();
-                        Console.Write("Año del vehiculo: ");
-                        automovil.Año = int.Parse(Console.ReadLine());
+                        string marca = Console.ReadLine();
+
+                        Console.Write("Año: ");
+                        int año = int.Parse(Console.ReadLine());
+
                         Console.Write("Kilometraje: ");
-                        automovil.Kilometraje = int.Parse(Console.ReadLine());
+                        int kilometraje = int.Parse(Console.ReadLine());
 
-                        Console.Write("Capacidad de combustible: ");
-                        _capacidad = double.Parse(Console.ReadLine());
+                        Console.Write("ID Motor: ");
+                        int idmotor = int.Parse(Console.ReadLine());
 
-                        Console.Write("Combustible actual del vehiculo: ");
-                        _litros = double.Parse(Console.ReadLine());
+                        Console.Write("Tipo Motor: \n" +
+                            "(1): " + TipoMotor.CUATRO_TIEMPOS + 
+                            "(2): " + TipoMotor.DOS_TIEMPOS);
 
-                        estanque.SetCombustible(_litros, _capacidad);
+                        int opcionMotor = int.Parse(Console.ReadLine());
+                        while (opcionMotor <= 3 && opcionMotor >= 1) //tipo Motor
+                        {
+                            if (opcionMotor == 1)
+                            {
+                                recub = "CUATRO_TIEMPOS";
+                            }
+                            else if (opcionMotor == 2)
+                            {
+                                recub = "DOS_TIEMPOS";
+                            }
+                            else
+                            {
+                                Console.WriteLine("----Numero ingresado invalido----");
+                                opcionMotor = int.Parse(Console.ReadLine());
+                            }
+                        }
+
+                        string tipoMotor = Console.ReadLine();
+
+                        Console.Write("Numero de ruedas: ");
+                        int numRuedas = int.Parse(Console.ReadLine());
+
+                        
+
+                        Console.Write("Seleccione tipo de recubrimiento:\n" +
+                            "(1): " + TipoRecubrimiento.FENOL +"\n"+
+                            "(2): " + TipoRecubrimiento.HULE + "\n" +
+                            "(3): " + TipoRecubrimiento.POLIUTERANO);
+
+                        int opcionRecubrimiento = int.Parse(Console.ReadLine());
+
+                        while (opcionRecubrimiento <= 3 && opcionRecubrimiento >= 1) //tipo recubrimiento
+                        {
+                            if (opcionRecubrimiento == 1)
+                            {
+                                recub = "FENOL";
+                            }
+                            else if(opcionRecubrimiento == 2)
+                            {
+                                recub = "HULE";
+                            }
+                            else if (opcionRecubrimiento == 3)
+                            {
+                                recub = "POLIUTERANO";
+                            }
+                            else
+                            {
+                                Console.WriteLine("----Numero ingresado invalido----");
+                                opcionRecubrimiento = int.Parse(Console.ReadLine());
+                            }
+                        }
+                        string tipoRecubrimiento = recub;
+
+                        Console.Write("Minimo durometro: ");
+                        int minDurometro = int.Parse(Console.ReadLine());
+
+                        Console.Write("Maximo durometro: ");
+                        int maxDurometro = int.Parse(Console.ReadLine());
+
+                        Console.Write("Seleccione tipo de recubrimiento:\n" +
+                            "(1): CARBURADOR\n" +
+                            "(2): INYECTOR");
+                        int opcionMezclador = int.Parse(Console.ReadLine());
+
+                        while (opcionMezclador <= 3 && opcionMezclador >= 1) //tipo mezclador
+                        {
+                            if (opcionRecubrimiento == 1)
+                            {
+                                tipCarb = "CARBURADOR";
+                            }
+                            else if (opcionRecubrimiento == 2)
+                            {
+                                tipCarb = "INYECTOR";
+                            }
+                            else
+                            {
+                                Console.WriteLine("----Numero ingresado invalido----");
+                                opcionRecubrimiento = int.Parse(Console.ReadLine());
+                            }
+                        }
+
+                        string tipoMezclador = tipCarb;
+
+                        Console.Write("Capacidad: ");
+                        int capacidad = int.Parse(Console.ReadLine());
 
                         Console.WriteLine("-----------Terminar-----------");
+                        Automovil vehuculo = new Automovil(marca, año, kilometraje, idmotor, tipoMotor, numRuedas, 
+                                                            tipoRecubrimiento, minDurometro,
+                                                            maxDurometro, tipoMezclador, capacidad);
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.Clear();
                         Console.WriteLine("----------Ver datos----------\n");
 
-                        Console.WriteLine("Marca: " + automovil.Marca);
-                        Console.WriteLine("Año: " + automovil.Año);
-                        Console.WriteLine("Kilometraje: " + automovil.Kilometraje);
-                        bool Litros = estanque.GetCombustible();
-                        if (Litros == true)
-                        {
-                            Console.WriteLine("Mitad de combustible");
-                        }
-                        else if (Litros == false)
-                        {
-                            Console.WriteLine("Bajo combustible");
-                        }
-
+                        Console.WriteLine("Marca: ");
+                        Console.WriteLine("Año: "  );
+                        Console.WriteLine("Kilometraje: " );
+                        
                         Console.ReadKey();
                         break;
                 }

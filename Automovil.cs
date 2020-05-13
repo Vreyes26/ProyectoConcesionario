@@ -6,18 +6,26 @@ namespace ProyectoConcesionario
 {
     class Automovil : Vehiculo
     {
-        public Automovil(int idmotor, TipoMotor tipoMotor, int cilindrada,
+
+        private string _marca;
+        private int _año;
+        private int _kilometraje;
+
+        public string Marca => _marca;
+
+        public int Año => _año;
+
+        public int Kilometraje => _kilometraje;
+
+        public Automovil(string marca, int año, int kilometraje, int idmotor, TipoMotor tipoMotor, int cilindrada,
             int numRuedas, TipoRecubrimiento tipoRecubrimiento, int minDurometro,
-            int maxDurometro, TipoMezclador tipoMezclador, double litros, double capacidad): 
+            int maxDurometro, TipoMezclador tipoMezclador, double capacidad): 
             base(idmotor, tipoMotor, cilindrada, numRuedas, tipoRecubrimiento,
             minDurometro, maxDurometro, tipoMezclador, capacidad)
         {
-
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
+            _marca = marca;
+            _año = año;
+            _kilometraje = kilometraje;
         }
     }
 }

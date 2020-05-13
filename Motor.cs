@@ -24,7 +24,7 @@ namespace ProyectoConcesionario
 
         public int ID => _id;
 
-        public TipoMotor tipo => _tipo;
+        public TipoMotor tipo 
 
         public double Cilindrada
         {

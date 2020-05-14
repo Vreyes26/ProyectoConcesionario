@@ -12,8 +12,9 @@ namespace ProyectoConcesionario
         private Estanque _estanque;
         private Mezclador _mezclador;
 
-        public Vehiculo(int idMotor, TipoMotor tipoMotor, int cilindrada,
-                        int numRuedas, TipoRecubrimiento tipoRecubrimiento, int minDurometro, int maxDurometro, 
+        public Vehiculo(string marca, int año, int kilometraje, int idMotor, TipoMotor tipoMotor, int cilindrada,
+                        int numRuedas, TipoRecubrimiento tipoRecubrimiento,
+                        int minDurometro, int maxDurometro, 
                         TipoMezclador tipoMezclador, double capacidad)
         {
             _motor = new Motor(idMotor, tipoMotor, cilindrada);

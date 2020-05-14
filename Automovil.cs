@@ -18,14 +18,19 @@ namespace ProyectoConcesionario
         public int Kilometraje => _kilometraje;
 
         public Automovil(string marca, int año, int kilometraje, int idmotor, TipoMotor tipoMotor, int cilindrada,
-            int numRuedas, TipoRecubrimiento tipoRecubrimiento, int minDurometro,
-            int maxDurometro, TipoMezclador tipoMezclador, double capacidad): 
-            base(idmotor, tipoMotor, cilindrada, numRuedas, tipoRecubrimiento,
-            minDurometro, maxDurometro, tipoMezclador, capacidad)
+                        int numRuedas, TipoRecubrimiento tipoRecubrimiento, int minDurometro,
+                        int maxDurometro, TipoMezclador tipoMezclador, double capacidad): 
+                        base(marca, año, kilometraje, idmotor, tipoMotor, cilindrada, numRuedas, tipoRecubrimiento,
+                        minDurometro, maxDurometro, tipoMezclador, capacidad)
         {
             _marca = marca;
             _año = año;
             _kilometraje = kilometraje;
+        }
+
+        public override string ToString()
+        {
+            return "";
         }
     }
 }

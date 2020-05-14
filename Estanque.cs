@@ -4,15 +4,17 @@ using System.Text;
 
 namespace ProyectoConcesionario
 {
-    class Estanque
+    class Estanque : VehiculoComponentes
     {
-        public double _capacidad;
-        public double _litros;
+        private readonly double _capacidad;
+        private double _litros;
 
         public Estanque(double capacidad)
         {
             _capacidad = capacidad;
         }
+
+        public double Capacidad => _capacidad;
 
         public bool MitadCombustible()
         {

@@ -9,8 +9,10 @@ namespace ProyectoConcesionario
         {
             string user;
             string password;
+            int menu;
             string recub = "";
             string tipCarb = "";
+            string tipMotor = "";
 
             do
             {
@@ -34,7 +36,7 @@ namespace ProyectoConcesionario
                     "1: Agregar vehiculo \n" +
                     "2: Ver datos vehiculo\n" +
                     "0: Salir");
-                int menu = int.Parse(Console.ReadLine());
+                menu = int.Parse(Console.ReadLine());
 
                 switch (menu)
                 {
@@ -62,11 +64,11 @@ namespace ProyectoConcesionario
                         {
                             if (opcionMotor == 1)
                             {
-                                recub = "CUATRO_TIEMPOS";
+                                tipMotor = "CUATRO_TIEMPOS";
                             }
                             else if (opcionMotor == 2)
                             {
-                                recub = "DOS_TIEMPOS";
+                                tipMotor = "DOS_TIEMPOS";
                             }
                             else
                             {
@@ -75,12 +77,10 @@ namespace ProyectoConcesionario
                             }
                         }
 
-                        string tipoMotor = Console.ReadLine();
+                        string tipoMotor = tipMotor;
 
                         Console.Write("Numero de ruedas: ");
                         int numRuedas = int.Parse(Console.ReadLine());
-
-                        
 
                         Console.Write("Seleccione tipo de recubrimiento:\n" +
                             "(1): " + TipoRecubrimiento.FENOL +"\n"+
@@ -142,10 +142,10 @@ namespace ProyectoConcesionario
                         string tipoMezclador = tipCarb;
 
                         Console.Write("Capacidad: ");
-                        int capacidad = int.Parse(Console.ReadLine());
+                        double capacidad = double.Parse(Console.ReadLine());
 
                         Console.WriteLine("-----------Terminar-----------");
-                        Automovil vehuculo = new Automovil(marca, año, kilometraje, idmotor, tipoMotor, numRuedas, 
+                        Automovil automovil = new Automovil(marca, año, kilometraje, idmotor, tipoMotor, numRuedas, 
                                                             tipoRecubrimiento, minDurometro,
                                                             maxDurometro, tipoMezclador, capacidad);
                         Console.ReadKey();
@@ -154,9 +154,6 @@ namespace ProyectoConcesionario
                         Console.Clear();
                         Console.WriteLine("----------Ver datos----------\n");
 
-                        Console.WriteLine("Marca: ");
-                        Console.WriteLine("Año: "  );
-                        Console.WriteLine("Kilometraje: " );
                         
                         Console.ReadKey();
                         break;

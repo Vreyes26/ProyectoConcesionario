@@ -13,7 +13,7 @@ namespace ProyectoConcesionario
     {
         private TipoRecubrimiento _recubrimiento;
         private readonly int[] _durometro;
-            
+
         public Rueda(TipoRecubrimiento recubrimiento, int minDurometro, int maxDurometro)
         {
             Recubrimiento = recubrimiento;
@@ -26,7 +26,6 @@ namespace ProyectoConcesionario
             set => Enum.TryParse(value.ToString(), out _recubrimiento);
         }
 
-
         public int[] Durometro
         {
             get { return _durometro; }
@@ -34,7 +33,7 @@ namespace ProyectoConcesionario
             {
                 if (value.GetType().IsArray)
                 {
-                    if(_durometro[0] <= _durometro[1])
+                    if (_durometro[0] <= _durometro[1])
                     {
                         _durometro[0] = value[0];
                         _durometro[1] = value[1];
@@ -47,5 +46,6 @@ namespace ProyectoConcesionario
                     }
                 }
             }
+        }
     }
 }

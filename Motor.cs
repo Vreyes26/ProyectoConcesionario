@@ -12,7 +12,7 @@ namespace ProyectoConcesionario
     class Motor : VehiculoComponentes
     {
         private readonly int _id;
-        private readonly TipoMotor _tipo;
+        private TipoMotor _tipo;
         private double _cilindrada;
    
         public Motor(int id, TipoMotor tipo, double cilindrada)
@@ -23,8 +23,12 @@ namespace ProyectoConcesionario
         }
 
         public int ID => _id;
-
-        public TipoMotor tipo 
+        
+        public TipoMotor Tipo
+        {
+            get => _tipo;
+            set => Enum.TryParse(value.ToString(), out _tipo);
+        }
 
         public double Cilindrada
         {

@@ -7,14 +7,16 @@ namespace ProyectoConcesionario
     class Estanque : VehiculoComponentes
     {
         private readonly double _capacidad;
-        private double _litros;
-
-        public Estanque(double capacidad)
-        {
-            _capacidad = capacidad;
-        }
+        private readonly double _litros;
 
         public double Capacidad => _capacidad;
+        public double Litros => _litros;
+
+        public Estanque(double capacidad, double litros)
+        {
+            this._litros = litros;
+            this._capacidad = capacidad;
+        }
 
         public bool MitadCombustible()
         {

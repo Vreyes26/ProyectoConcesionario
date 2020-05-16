@@ -144,10 +144,13 @@ namespace ProyectoConcesionario
                         Console.Write("Capacidad: ");
                         double capacidad = double.Parse(Console.ReadLine());
 
+                        double litros = double.Parse(Console.ReadLine());
+
                         Console.WriteLine("-----------Terminar-----------");
                         Automovil automovil = new Automovil(marca, año, kilometraje, idmotor, tipoMotor, numRuedas, 
                                                             tipoRecubrimiento, minDurometro,
-                                                            maxDurometro, tipoMezclador, capacidad);
+                                                            maxDurometro, tipoMezclador, capacidad, litros);
+                        
                         Console.ReadKey();
                         break;
                     case 2:

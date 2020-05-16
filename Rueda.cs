@@ -11,19 +11,19 @@ namespace ProyectoConcesionario
 
     class Rueda : VehiculoComponentes
     {
-        private TipoRecubrimiento _recubrimiento;
+        private TipoRecubrimiento _tipo;
         private readonly int[] _durometro;
 
-        public Rueda(TipoRecubrimiento recubrimiento, int minDurometro, int maxDurometro)
+        public Rueda(TipoRecubrimiento tipo, int minDurometro, int maxDurometro)
         {
-            Recubrimiento = recubrimiento;
+            _tipo = tipo;
             _durometro = new int[] { minDurometro, maxDurometro };
         }
 
-        public TipoRecubrimiento Recubrimiento
+        public TipoRecubrimiento Tipo
         {
-            get => _recubrimiento;
-            set => Enum.TryParse(value.ToString(), out _recubrimiento);
+            get => _tipo;
+            set => Enum.TryParse(value.ToString(), out _tipo);
         }
 
         public int[] Durometro

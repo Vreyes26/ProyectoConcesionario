@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ProyectoConcesionario
@@ -11,15 +12,16 @@ namespace ProyectoConcesionario
         private Rueda[] _ruedas;
         private Estanque _estanque;
         private Mezclador _mezclador;
+        
 
-        public Vehiculo(string marca, int año, int kilometraje, int idMotor, TipoMotor tipoMotor, int cilindrada,
+        public Vehiculo(int idMotor, TipoMotor tipoMotor, int cilindrada,
                         int numRuedas, TipoRecubrimiento tipoRecubrimiento,
                         int minDurometro, int maxDurometro, 
-                        TipoMezclador tipoMezclador, double capacidad)
+                        TipoMezclador tipoMezclador, double capacidad, double litros)
         {
             _motor = new Motor(idMotor, tipoMotor, cilindrada);
             _ruedas = new Rueda[numRuedas];
-            _estanque = new Estanque(capacidad);
+            _estanque = new Estanque(capacidad, litros);
             _mezclador = new Mezclador(tipoMezclador);
 
             for (int i = 0; i < numRuedas; i++)

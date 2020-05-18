@@ -23,7 +23,6 @@ namespace ProyectoConcesionario
                         base(idmotor, tipoMotor, cilindrada, numRuedas, tipoRecubrimiento,
                         minDurometro, maxDurometro, tipoMezclador, capacidad, litros)
         {
-            
             _marca = marca;
             _año = año;
             _kilometraje = kilometraje;

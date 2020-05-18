@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Runtime.ConstrainedExecution;
 
 namespace ProyectoConcesionario
 {
@@ -27,6 +28,10 @@ namespace ProyectoConcesionario
                     Console.WriteLine("Usuario o contraseña incorrectos\n");
                 }
             } while (user != "admin" || password != "abc123");
+
+            Automovil automovil = new Automovil("Mazda", 1998, 99, 430, TipoMotor.CUATRO_TIEMPOS, 4,
+                                                            TipoRecubrimiento.FENOL, 20,
+                                                            40, TipoMezclador.CARBURADOR, 50.0, 20.0);
 
             do
             {
@@ -147,7 +152,7 @@ namespace ProyectoConcesionario
                         double litros = double.Parse(Console.ReadLine());
 
                         Console.WriteLine("-----------Terminar-----------");
-                        Automovil automovil = new Automovil(marca, año, kilometraje, idmotor, tipoMotor, numRuedas, 
+                        Automovil automovil_2 = new Automovil(marca, año, kilometraje, idmotor, tipoMotor, numRuedas, 
                                                             tipoRecubrimiento, minDurometro,
                                                             maxDurometro, tipoMezclador, capacidad, litros);
                         
@@ -157,7 +162,8 @@ namespace ProyectoConcesionario
                         Console.Clear();
                         Console.WriteLine("----------Ver datos----------\n");
 
-                        
+                        Console.WriteLine(automovil);
+
                         Console.ReadKey();
                         break;
                 }

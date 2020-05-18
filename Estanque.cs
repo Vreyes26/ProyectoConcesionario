@@ -20,12 +20,12 @@ namespace ProyectoConcesionario
 
         public bool MitadCombustible()
         {
-            return _litros > (0.105 * _capacidad) && _litros <= (0.5 * _capacidad);
+            return _litros > 0.105 && _litros <= 0.5;
         }
 
         public bool BajoCombustible()
         {
-            return _litros <= (0.105 * _capacidad);
+            return _litros <= 0.105;
         }
     }
 }
